@@ -1,0 +1,2 @@
+# Paeckchen
+Bash Trinkspiel
