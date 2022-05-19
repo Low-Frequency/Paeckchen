@@ -36,6 +36,7 @@ do
 	then
 		cat ./side1.txt | xargs -i echo -e "${RED}{}"
                 echo ""
+		DRINK=$(($DRINK+1))
 		echo -e "${RED}Das Paeckchen ist auf Seite 1 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
 		echo ""
@@ -54,6 +55,7 @@ do
 	then
 		cat ./side2.txt | xargs -i echo -e "${RED}{}"
                 echo ""
+		DRINK=$(($DRINK+2))
 		echo -e "${RED}Das Paeckchen ist auf Seite 2 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
 		echo ""
