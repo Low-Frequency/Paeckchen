@@ -17,9 +17,13 @@ echo ""
 
 while [[ "$KEEP" -eq 1 ]]
 do
-	RAND=$((1+$RANDOM%100))
+	RAND=$((1+$RANDOM%101))
 
-	if [[ "$RAND" -le 51 ]]
+	if [[ "$RAND" -eq 101 ]]
+	then
+		echo -e "${RED}AUF EX!"
+		echo ""
+	elif [[ "$RAND" -le 51 ]]
 	then
 		SIDE=1
 	elif [[ "$RAND" -gt 50 && "$RAND" -lt 91 ]]
