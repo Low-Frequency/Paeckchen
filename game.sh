@@ -34,7 +34,7 @@ do
 
 	if [[ "$SIDE" -eq 1 && "$PREV" -gt 1 ]]
 	then
-		cat ./side1.txt
+		cat ./side1.txt | xargs -i echo -e "${RED}{}"
                 echo ""
 		echo -e "${RED}Das Paeckchen ist auf Seite 1 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
@@ -44,7 +44,7 @@ do
 		DRINK=0
 	elif [[ "$SIDE" -eq 1 ]]
 	then
-		cat ./side1.txt
+		cat ./side1.txt | xargs -i echo -e "${GREEN}{}"
                 echo ""
 		echo -e "${GREEN}Das Paeckchen ist auf Seite 1 gelandet.${NONE}"
 		echo ""
@@ -52,7 +52,7 @@ do
 		DRINK=$(($DRINK+1))
 	elif [[ "$SIDE" -eq 2 && "$PREV" -gt 2 ]]
 	then
-		cat ./side2.txt
+		cat ./side2.txt | xargs -i echo -e "${RED}{}"
                 echo ""
 		echo -e "${RED}Das Paeckchen ist auf Seite 2 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
@@ -62,7 +62,7 @@ do
 		DRINK=0
 	elif [[ "$SIDE" -eq 2 ]]
 	then
-		cat ./side2.txt
+		cat ./side2.txt | xargs -i echo -e "${GREEN}{}"
                 echo ""
 		echo -e "${GREEN}Das Paeckchen ist auf Seite 2 gelandet.${NONE}"
 		echo ""
@@ -70,7 +70,7 @@ do
 		DRINK=$(($DRINK+2))
 	elif [[ "$SIDE" -eq 3 ]]
 	then
-		cat ./side3.txt
+		cat ./side3.txt | xargs -i echo -e "${GREEN}{}"
                 echo ""
 		echo -e "${GREEN}Das Paeckchen ist auf Seite 3 gelandet.${NONE}"
 		echo ""
@@ -78,7 +78,7 @@ do
 		DRINK=$(($DRINK+3))
 	elif [[ "$SIDE" -eq 99 ]]
 	then
-		cat ./ex.txt
+		cat ./ex.txt | xargs -i echo -e "${RED}{}"
                 echo ""
 		echo -e "${RED}AUF EX!"
                 echo ""
