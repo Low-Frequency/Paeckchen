@@ -77,6 +77,7 @@ do
 		PREV=3
 		DRINK=$(($DRINK+3))
 	elif [[ "$SIDE" -eq 99 ]]
+	then
 		echo -e "${RED}AUF EX!"
                 echo ""
                 cat ./ex.txt
