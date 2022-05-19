@@ -21,8 +21,7 @@ do
 
 	if [[ "$RAND" -eq 101 ]]
 	then
-		echo -e "${RED}AUF EX!"
-		echo ""
+		SIDE=99
 	elif [[ "$RAND" -le 51 ]]
 	then
 		SIDE=1
@@ -38,12 +37,16 @@ do
 		echo -e "${RED}Das Paeckchen ist auf Seite 1 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
 		echo ""
+		cat ./side1.txt
+		echo ""
 		PREV=0
 		COMBINED=$(($COMBINED+$DRINK))
 		DRINK=0
 	elif [[ "$SIDE" -eq 1 ]]
 	then
 		echo -e "${GREEN}Das Paeckchen ist auf Seite 1 gelandet.${NONE}"
+		echo ""
+		cat ./side1.txt
 		echo ""
 		PREV=1
 		DRINK=$(($DRINK+1))
@@ -52,6 +55,8 @@ do
 		echo -e "${RED}Das Paeckchen ist auf Seite 2 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
 		echo ""
+		cat ./side2.txt
+		echo ""
 		PREV=0
 		COMBINED=$(($COMBINED+$DRINK))
 		DRINK=0
@@ -59,14 +64,23 @@ do
 	then
 		echo -e "${GREEN}Das Paeckchen ist auf Seite 2 gelandet.${NONE}"
 		echo ""
+		cat ./side2.txt
+		echo ""
 		PREV=2
 		DRINK=$(($DRINK+2))
 	elif [[ "$SIDE" -eq 3 ]]
 	then
 		echo -e "${GREEN}Das Paeckchen ist auf Seite 3 gelandet.${NONE}"
 		echo ""
+		cat ./side3.txt
+		echo ""
 		PREV=3
 		DRINK=$(($DRINK+3))
+	elif [[ "$SIDE" -eq 99 ]]
+		echo -e "${RED}AUF EX!"
+                echo ""
+                cat ./ex.txt
+		echo ""
 	fi
 
 	echo "Weiterspielen?"
