@@ -34,54 +34,54 @@ do
 
 	if [[ "$SIDE" -eq 1 && "$PREV" -gt 1 ]]
 	then
+		cat ./side1.txt
+                echo ""
 		echo -e "${RED}Das Paeckchen ist auf Seite 1 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
-		echo ""
-		cat ./side1.txt
 		echo ""
 		PREV=0
 		COMBINED=$(($COMBINED+$DRINK))
 		DRINK=0
 	elif [[ "$SIDE" -eq 1 ]]
 	then
-		echo -e "${GREEN}Das Paeckchen ist auf Seite 1 gelandet.${NONE}"
-		echo ""
 		cat ./side1.txt
+                echo ""
+		echo -e "${GREEN}Das Paeckchen ist auf Seite 1 gelandet.${NONE}"
 		echo ""
 		PREV=1
 		DRINK=$(($DRINK+1))
 	elif [[ "$SIDE" -eq 2 && "$PREV" -gt 2 ]]
 	then
+		cat ./side2.txt
+                echo ""
 		echo -e "${RED}Das Paeckchen ist auf Seite 2 gelandet."
 		echo -e "Trink $DRINK Schluecke!${NONE}"
-		echo ""
-		cat ./side2.txt
 		echo ""
 		PREV=0
 		COMBINED=$(($COMBINED+$DRINK))
 		DRINK=0
 	elif [[ "$SIDE" -eq 2 ]]
 	then
-		echo -e "${GREEN}Das Paeckchen ist auf Seite 2 gelandet.${NONE}"
-		echo ""
 		cat ./side2.txt
+                echo ""
+		echo -e "${GREEN}Das Paeckchen ist auf Seite 2 gelandet.${NONE}"
 		echo ""
 		PREV=2
 		DRINK=$(($DRINK+2))
 	elif [[ "$SIDE" -eq 3 ]]
 	then
-		echo -e "${GREEN}Das Paeckchen ist auf Seite 3 gelandet.${NONE}"
-		echo ""
 		cat ./side3.txt
+                echo ""
+		echo -e "${GREEN}Das Paeckchen ist auf Seite 3 gelandet.${NONE}"
 		echo ""
 		PREV=3
 		DRINK=$(($DRINK+3))
 	elif [[ "$SIDE" -eq 99 ]]
 	then
+		cat ./ex.txt
+                echo ""
 		echo -e "${RED}AUF EX!"
                 echo ""
-                cat ./ex.txt
-		echo ""
 	fi
 
 	echo "Weiterspielen?"
